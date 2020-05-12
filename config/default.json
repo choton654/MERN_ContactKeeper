@@ -1,0 +1,4 @@
+{
+    "mongoUri": "mongodb+srv://admin-choton:9804750147@cluster0-j7z2c.mongodb.net/contact_keeper",
+    "jwt_secret": "secret"
+}

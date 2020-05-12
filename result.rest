@@ -1,0 +1,48 @@
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "name": "Harry William",
+    "email": "hary@gmail.com",
+    "password": "987654"
+}
+###
+POST http://localhost:3000/api/auth
+Content-Type: application/json
+
+{
+    "email":"jhon@gmail.com",
+    "password":"123456"
+}
+###
+GET http://localhost:3000/api/auth
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWViNzgwODVjMTE2NDUxZDAwYTlkMjQ3In0sImlhdCI6MTU4OTA4NDMzMSwiZXhwIjoxNTg5MTIwMzMxfQ.1fzN6M87DsvWpqpIAOsApx47WEQYOhBXjw1P53a-tFI
+
+###
+GET http://localhost:3000/api/contacts
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWViNzgwODVjMTE2NDUxZDAwYTlkMjQ3In0sImlhdCI6MTU4OTA4NDMzMSwiZXhwIjoxNTg5MTIwMzMxfQ.1fzN6M87DsvWpqpIAOsApx47WEQYOhBXjw1P53a-tFI
+
+###
+POST http://localhost:3000/api/contacts HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWViNmM1MmFkYjQ3NTAwMzhjNzhlNjRiIn0sImlhdCI6MTU4OTA4ODcxMiwiZXhwIjoxNTg5MTI0NzEyfQ.ERIyJSAJbD_dG0qHtmFePdJ2K43gtQyGyJGXWt4k9FA
+Content-Type: application/json
+
+{
+    "name": "harry potter",
+    "email": "potter@gmail.com",
+    "phone": "333-111-2222"
+}
+###
+PUT  http://localhost:3000/api/contacts/5eb79358dda71f0f84947254
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWViNmM1MmFkYjQ3NTAwMzhjNzhlNjRiIn0sImlhdCI6MTU4OTA5MDM1MywiZXhwIjoxNTg5MTI2MzUzfQ.wmpZYF1QxcEdM0LLsrCyFQkY7IckiTIhFn0k5sio-tw
+Content-Type: application/json
+
+{
+    "name": "harry potter",
+    "email": "potter@gmail.com",
+    "phone": "444-111-5666"
+}
+
+###
+DELETE http://localhost:3000/api/contacts/5eb78117c116451d00a9d248 HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWViNzgwODVjMTE2NDUxZDAwYTlkMjQ3In0sImlhdCI6MTU4OTA4OTk3OCwiZXhwIjoxNTg5MTI1OTc4fQ.fwoqm5L9mjWd8weowMMFjrjWmunkhUS9IO4X4pku8rc
